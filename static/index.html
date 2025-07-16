@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production Scheduler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Production Scheduler</h1>
+
+        <div class="card">
+            <h2>Add New Job</h2>
+            <form id="add-job-form">
+                <div class="form-group">
+                    <label for="item">Item Code</label>
+                    <input type="text" id="item" placeholder="e.g., PN-001" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Product Name</label>
+                    <input type="text" id="name" placeholder="e.g., Product A" required>
+                </div>
+                <div class="form-group">
+                    <label for="pieces_per_hour">Pieces / Hour</label>
+                    <input type="number" id="pieces_per_hour" placeholder="e.g., 100" required>
+                </div>
+                <div class="form-group">
+                    <label for="total_pieces">Total Pieces</label>
+                    <input type="number" id="total_pieces" placeholder="e.g., 1000" required>
+                </div>
+                <button type="submit">Add Job</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>Current Jobs</h2>
+            <table id="jobs-table">
+                <thead>
+                    <tr>
+                        <th>Item Code</th>
+                        <th>Product Name</th>
+                        <th>Pcs/Hr</th>
+                        <th>Total Pcs</th>
+                        <th>Required Hrs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Job rows will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+            <button id="calculate-schedule-btn">Calculate Schedule</button>
+        </div>
+
+        <div class="card" id="schedule-output-card">
+            <h2>Production Schedule</h2>
+            <div id="schedule-output">
+                <!-- Schedule will be rendered here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
